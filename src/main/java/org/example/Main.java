@@ -3,16 +3,16 @@ package org.example;
 public class Main {
     public static boolean isPalindrome(String s) {
         if (s.length() < 2 || s.isBlank()) return true;
-        String res = new String(s.toLowerCase());
+        s = s.toLowerCase();
         int left, right;
         left = 0;
-        right = res.length() - 1;
+        right = s.length() - 1;
 
         while (left < right) {
-            while (left < right && !Character.isLetterOrDigit(res.charAt(left))) left++;
-            while (left < right && !Character.isLetterOrDigit(res.charAt(right))) right--;
+            while (left < right && !Character.isLetterOrDigit(s.charAt(left))) left++;
+            while (left < right && !Character.isLetterOrDigit(s.charAt(right))) right--;
             if (left > right) return true;
-            if (res.charAt(left) != res.charAt(right)) break;
+            if (s.charAt(left) != s.charAt(right)) break;
             left++;
             right--;
         }
